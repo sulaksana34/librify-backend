@@ -20,7 +20,7 @@ class SubCategory extends ResourceController
     // all users
     public function index()
     {
-        $data['sub_category'] = $this->model->orderBy('sub_category_id', 'DESC')->findAll();
+        $data['data'] = $this->model->orderBy('category_id', 'ASC')->findAll();
         return $this->respond($data);
     }
     // create

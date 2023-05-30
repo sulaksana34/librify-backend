@@ -20,7 +20,7 @@ class Category extends ResourceController
     // all users
     public function index()
     {
-        $data['category'] = $this->model->orderBy('category_id', 'DESC')->findAll();
+        $data['data'] = $this->model->orderBy('category_id', 'ASC')->findAll();
         return $this->respond($data);
     }
     // create
