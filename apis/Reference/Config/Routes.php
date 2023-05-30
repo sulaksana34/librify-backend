@@ -1,10 +1,19 @@
 <?php
 
 $routes->group('api/reference', ['filter' => 'cors'], function ($routes) {
-  $routes->get('product', '\APIs\Reference\Controllers\Product::index');
-  $routes->get('product/(:any)', '\APIs\Reference\Controllers\Product::show/$1');
-  $routes->post('product', '\APIs\Reference\Controllers\Product::create');
-  $routes->patch('product/(:any)', '\APIs\Reference\Controllers\Product::update/$1');
-  $routes->put('product/(:any)', '\APIs\Reference\Controllers\Product::update/$1');
-  $routes->delete('product/(:any)', '\APIs\Reference\Controllers\Product::delete/$1');
+  // Category
+  $routes->get('category', '\APIs\Reference\Controllers\Category::index');
+  $routes->get('category/(:any)', '\APIs\Reference\Controllers\Category::show/$1');
+  $routes->post('category', '\APIs\Reference\Controllers\Category::create');
+  $routes->patch('category/(:any)', '\APIs\Reference\Controllers\Category::update/$1');
+  $routes->put('category/(:any)', '\APIs\Reference\Controllers\Category::update/$1');
+  $routes->delete('category/(:any)', '\APIs\Reference\Controllers\Category::delete/$1');
+
+  // Sub Category
+  $routes->get('sub_category', '\APIs\Reference\Controllers\SubCategory::index');
+  $routes->get('sub_category/(:any)', '\APIs\Reference\Controllers\SubCategory::show/$1');
+  $routes->post('sub_category', '\APIs\Reference\Controllers\SubCategory::create');
+  $routes->patch('sub_category/(:any)', '\APIs\Reference\Controllers\SubCategory::update/$1');
+  $routes->put('sub_category/(:any)', '\APIs\Reference\Controllers\SubCategory::update/$1');
+  $routes->delete('sub_category/(:any)', '\APIs\Reference\Controllers\SubCategory::delete/$1');
 });
