@@ -13,7 +13,7 @@ class SubCategory extends ResourceController
     function __construct()
     {
         date_default_timezone_set('Asia/Jakarta');
-        $this->now = date('Y-m-d h:i:s');
+        $this->now = date('Y-m-d H:i:s');
         $this->model = new SubCategoryModel();
     }
 
