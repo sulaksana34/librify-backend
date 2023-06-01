@@ -2,6 +2,9 @@
 
 namespace Config;
 
+use Auth0\SDK\Auth0;
+use Auth0\SDK\Exception\CoreException;
+use App\Libraries\Auth0SessionStore;
 use CodeIgniter\Config\BaseService;
 
 /**
@@ -29,4 +32,24 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
+
+     public static function auth0(bool $getShared = true)
+     {
+         if ($getShared)
+         {
+             return static::getSharedInstance('auth0');
+         }
+ 
+         $config = config('Auth0');
+         $config = [
+             'domain'        => getenv('AUTH0_DOMAIN'),
+             'client_id'     => getenv('AUTH0_CLIENT_ID'),
+             'client_secret' => getenv('AUTH0_CLIENT_SECRET'),
+             'redirect_uri'  => getenv('AUTH0_BASE_URL'),
+            //  'scope'         => getenv('AUTH0_BASE_URL'),
+             'store'         => new Auth0SessionStore(),
+         ];
+ 
+         return new Auth0($config);
+     }
 }

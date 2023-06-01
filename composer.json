@@ -6,12 +6,19 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "agungsugiarto/codeigniter4-cors": "^3.0",
-        "codeigniter4/framework": "^4.0"
+        "auth0/auth0-php": "^8.3",
+        "codeigniter4/framework": "^4.0",
+        "guzzlehttp/guzzle": "^7.7",
+        "guzzlehttp/psr7": "^2.5",
+        "http-interop/http-factory-guzzle": "^1.2"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "autoload": {
         "exclude-from-classmap": [

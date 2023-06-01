@@ -38,6 +38,12 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// Auth0 Routing
+$routes->get('/auth', 'Auth::index');
+$routes->get('/auth/callback', 'Auth::callback');
+$routes->get('/auth/login', 'Auth::login');
+$routes->get('/auth/logout', 'Auth::logout');
+
 
 /*
  * --------------------------------------------------------------------
